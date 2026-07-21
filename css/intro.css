@@ -1,0 +1,121 @@
+/* Intro sequence: SCI breaks free of a ring of chain links, revealing the
+   site. Pure CSS keyframes driven by JS state classes (no animation library).
+   Plays once per session (see js/intro.js), always skippable, and respects
+   prefers-reduced-motion by skipping straight to the reveal. */
+
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  background: radial-gradient(circle at 50% 45%, #14181f 0%, var(--color-bg) 70%);
+  transition: opacity 600ms var(--ease), visibility 600ms var(--ease);
+}
+.intro-overlay.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-stage { width: min(72vw, 320px); }
+.intro-rig { width: 100%; height: auto; overflow: visible; }
+
+/* Two-layer transform per link: chain-pos (outer) places it on the ring and
+   sets its base rotation; chain (inner) is animated (rattle/break) relative
+   to that local origin, so the two transforms compose instead of colliding. */
+.chain rect {
+  fill: var(--color-surface);
+  stroke: var(--color-border-strong);
+  stroke-width: 1.5;
+}
+.chain-pos--1 { transform: translate(160px, 68px); }
+.chain-pos--2 { transform: translate(233px, 108px) rotate(60deg); }
+.chain-pos--3 { transform: translate(233px, 212px) rotate(120deg); }
+.chain-pos--4 { transform: translate(160px, 252px) rotate(180deg); }
+.chain-pos--5 { transform: translate(87px, 212px) rotate(240deg); }
+.chain-pos--6 { transform: translate(87px, 108px) rotate(300deg); }
+
+.intro-overlay.is-rattling .chain {
+  animation: chainRattle 140ms ease-in-out infinite alternate;
+}
+.chain--2, .chain--4, .chain--6 { animation-delay: 40ms; }
+
+/* Each link breaks outward along its own ring angle + spins away. */
+.intro-overlay.is-breaking .chain {
+  animation: chainBreak 620ms var(--ease) forwards;
+}
+.intro-overlay.is-breaking .chain--1 { animation-delay: 0ms; }
+.intro-overlay.is-breaking .chain--2 { animation-delay: 40ms; }
+.intro-overlay.is-breaking .chain--3 { animation-delay: 80ms; }
+.intro-overlay.is-breaking .chain--4 { animation-delay: 120ms; }
+.intro-overlay.is-breaking .chain--5 { animation-delay: 160ms; }
+.intro-overlay.is-breaking .chain--6 { animation-delay: 200ms; }
+
+.intro-core-ring { stroke: var(--color-border-strong); transition: stroke 400ms; }
+.intro-core-glow {
+  fill: var(--color-primary);
+  opacity: 0.18;
+  transition: opacity 500ms var(--ease), r 500ms var(--ease);
+}
+.intro-core-mark { color: var(--color-text-dim); transition: color 500ms var(--ease); }
+
+.intro-overlay.is-breaking .intro-core-glow { opacity: 0.55; r: 58; }
+.intro-overlay.is-breaking .intro-core-ring { stroke: var(--color-primary); }
+.intro-overlay.is-breaking .intro-core-mark { color: var(--color-primary); }
+
+.intro-caption {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  letter-spacing: 0.08em;
+}
+.intro-caption::after {
+  content: "";
+  display: inline-block;
+  width: 1ch;
+  animation: dots 1.1s steps(4) infinite;
+}
+
+.intro-skip {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+}
+.intro-skip:hover { color: var(--color-primary); border-color: var(--color-primary); }
+
+@keyframes chainRattle {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(var(--rr, 3deg)); }
+}
+.chain--1 { --rr: -3deg; } .chain--2 { --rr: 3deg; } .chain--3 { --rr: -3deg; }
+.chain--4 { --rr: 3deg; } .chain--5 { --rr: -3deg; } .chain--6 { --rr: 3deg; }
+
+/* Because chain-pos already rotated the link to its ring angle, "outward" is
+   simply -Y in the link's OWN local frame for every link alike — one shared
+   keyframe, no per-link direction math needed. */
+@keyframes chainBreak {
+  0%   { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+  35%  { opacity: 1; transform: translateY(-16px) rotate(-8deg) scale(1.08); }
+  100% { opacity: 0; transform: translateY(-140px) rotate(150deg) scale(0.55); }
+}
+
+@keyframes dots {
+  0% { content: ""; } 25% { content: "."; } 50% { content: ".."; } 75%, 100% { content: "..."; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-overlay { transition: none; }
+  .intro-overlay.is-rattling .chain,
+  .intro-overlay.is-breaking .chain { animation: none; opacity: 0; }
+}

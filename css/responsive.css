@@ -1,0 +1,56 @@
+@media (max-width: 980px) {
+  .hero-grid, .about-grid { grid-template-columns: 1fr; }
+  /* Copy stays first on narrow screens — the headline is the pitch, the
+     terminal card is a supporting visual, not the lead. */
+  .hero-visual { max-width: 480px; margin-inline: auto; }
+  .service-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .split-grid { grid-template-columns: 1fr; }
+  .split-seam { flex-direction: row; padding-block: 14px; }
+  .seam-line { width: auto; height: 1px; flex: 1; }
+  .seam-label { writing-mode: horizontal-tb; padding-inline: 8px; }
+}
+
+@media (max-width: 760px) {
+  .main-nav {
+    position: fixed;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 20px 20px;
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-med) var(--ease), transform var(--dur-med) var(--ease);
+  }
+  .main-nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav-link {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .nav-link--cta {
+    margin-top: 12px;
+    text-align: center;
+  }
+  .burger { display: flex; }
+
+  .hero-stats { flex-wrap: wrap; gap: 24px; row-gap: 20px; }
+  .service-grid { grid-template-columns: 1fr; }
+  .panel-metrics { grid-template-columns: repeat(2, 1fr); }
+  .contact-links { flex-direction: column; }
+  .footer-inner { flex-direction: column; gap: 14px; text-align: center; }
+}
+
+@media (max-width: 420px) {
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta .btn { justify-content: center; }
+}

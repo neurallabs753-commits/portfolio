@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Веб-розробка, Telegram-боти та AI-інтеграції. Побудовано на SCI, власній платформі автоматизації. Здача за 24-48 годин.">
+<title>Веб-розробка, боти, AI-інтеграції · SCI</title>
+
+<!-- Favicon: inline SVG, no external asset — the same hex "SCI" mark used
+     in the header/panels, on a dark rounded tile so it reads on any browser
+     chrome theme. -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0d10'/%3E%3Cpath d='M16 6 L25 11 V21 L16 26 L7 21 V11 Z' fill='none' stroke='%23ff7a45' stroke-width='1.8'/%3E%3Ccircle cx='16' cy='16' r='3.4' fill='%23ff7a45'/%3E%3C/svg%3E">
+
+<!-- Social preview (Telegram/Fiverr/etc. link unfurling) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Веб-розробка, боти, AI-інтеграції · SCI">
+<meta property="og:description" content="Лендинг за 24-48 годин, Telegram-боти, AI-асистенти. Побудовано на SCI — власній платформі автоматизації розробки.">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Веб-розробка, боти, AI-інтеграції · SCI">
+<meta name="twitter:description" content="Лендинг за 24-48 годин, Telegram-боти, AI-асистенти. Побудовано на SCI — власній платформі автоматизації розробки.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ivan",
+  "jobTitle": "Web Developer",
+  "email": "mailto:neurallabs753@gmail.com",
+  "sameAs": [
+    "https://www.fiverr.com/ivan_sci",
+    "https://t.me/NeuralMrIvan"
+  ],
+  "knowsAbout": ["Web Development", "Telegram Bots", "AI Integrations", "Python", "JavaScript"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/intro.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- Shared SVG marks — defined once, referenced with <use>. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark-sci" viewBox="0 0 32 32">
+    <path d="M16 2 L28 9 V23 L16 30 L4 23 V9 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="16" cy="16" r="4.5" fill="currentColor"/>
+    <path d="M16 2 V11 M16 21 V30 M28 9 L20.5 13.5 M4 23 L11.5 18.5 M28 23 L20.5 18.5 M4 9 L11.5 13.5" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>
+  </symbol>
+</svg>
+
+<!-- ==================== INTRO: SCI breaks the chains ==================== -->
+<div class="intro-overlay" id="introOverlay" role="presentation">
+  <div class="intro-stage">
+    <svg class="intro-rig" viewBox="0 0 320 320" aria-hidden="true">
+      <g class="chain-pos chain-pos--1"><g class="chain chain--1"><rect x="-16" y="-7" width="32" height="14" rx="7"/></g></g>
+      <g class="chain-pos chain-pos--2"><g class="chain chain--2"><rect x="-16" y="-7" width="32" height="14" rx="7"/></g></g>
+      <g class="chain-pos chain-pos--3"><g class="chain chain--3"><rect x="-16" y="-7" width="32" height="14" rx="7"/></g></g>
+      <g class="chain-pos chain-pos--4"><g class="chain chain--4"><rect x="-16" y="-7" width="32" height="14" rx="7"/></g></g>
+      <g class="chain-pos chain-pos--5"><g class="chain chain--5"><rect x="-16" y="-7" width="32" height="14" rx="7"/></g></g>
+      <g class="chain-pos chain-pos--6"><g class="chain chain--6"><rect x="-16" y="-7" width="32" height="14" rx="7"/></g></g>
+
+      <g class="intro-core">
+        <circle class="intro-core-ring" cx="160" cy="160" r="46" fill="none" stroke-width="2"/>
+        <circle class="intro-core-glow" cx="160" cy="160" r="30"/>
+        <use href="#mark-sci" x="140" y="140" width="40" height="40" class="intro-core-mark"/>
+      </g>
+    </svg>
+    <p class="intro-caption" id="introCaption">ініціалізація SCI</p>
+  </div>
+  <button class="intro-skip" id="introSkip" type="button">Пропустити ⏵</button>
+</div>
+
+<a class="skip-link" href="#main">Перейти до контенту</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#top" class="brand" data-i18n-aria="nav.home">
+      <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+      <span class="brand-name" data-i18n="nav.brand">Портфоліо</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Основна навігація">
+      <a href="#sci" class="nav-link" data-i18n="nav.sci">SCI</a>
+      <a href="#services" class="nav-link" data-i18n="nav.services">Послуги</a>
+      <a href="#about" class="nav-link" data-i18n="nav.about">Про мене</a>
+      <a href="#contact" class="nav-link nav-link--cta" data-i18n="nav.contact">Зв'язатись</a>
+    </nav>
+
+    <div class="header-controls">
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+        <span class="lang-opt is-active" data-lang="uk">UA</span>
+        <span class="lang-sep">/</span>
+        <span class="lang-opt" data-lang="en">EN</span>
+      </button>
+      <button class="burger" id="burgerBtn" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span data-i18n="hero.eyebrow">SCI активний · маршрутизація по 6 AI-провайдерах</span>
+        </p>
+        <h1 class="hero-title">
+          <span data-i18n="hero.title1">Роблю сайти й ботів,</span><br>
+          <span class="hero-title-accent" data-i18n="hero.title2">що працюють з першого дня</span>
+        </h1>
+        <p class="hero-sub" data-i18n="hero.sub">
+          Лендинг — 24-48 годин. Telegram-бот — 2-3 дні. Не тому що абияк, а тому що
+          розробка автоматизована на власній платформі — рутина не з'їдає час.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn--primary btn--magnetic" data-i18n="hero.ctaPrimary">Обговорити проєкт</a>
+          <a href="#sci" class="btn btn--ghost btn--magnetic" data-i18n="hero.ctaSecondary">Як працює SCI</a>
+        </div>
+        <dl class="hero-stats">
+          <div class="hero-stat">
+            <dt data-i18n="hero.stat1n">24-48г</dt>
+            <dd data-i18n="hero.stat1d">здача лендингу</dd>
+          </div>
+          <div class="hero-stat">
+            <dt class="js-counter" data-target="100" data-suffix="k+">0</dt>
+            <dd data-i18n="hero.stat2d">рядків коду в основі</dd>
+          </div>
+          <div class="hero-stat">
+            <dt class="js-counter" data-target="1000" data-suffix="+">0</dt>
+            <dd data-i18n="hero.stat3d">автотестів</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+            <span class="terminal-title">deploy.sh</span>
+          </div>
+          <pre class="terminal-body"><code><span class="tk-muted">$</span> <span class="tk-cmd">sci</span> build --brief <span class="tk-str">"кав'ярня Aroma"</span>
+<span class="tk-out">→ architecture      ok   0:04</span>
+<span class="tk-out">→ wave build (14)   ok   1:52</span>
+<span class="tk-out">→ dedup + validate  ok   0:11</span>
+<span class="tk-out">→ qa review         ok   0:18</span>
+<span class="tk-ok">✓ ready — 24h delivery</span>
+<span class="tk-muted">$</span> <span class="tk-cursor">▍</span></code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SCI vs IVAN — explicit visual boundary ==================== -->
+  <section class="split" id="sci">
+    <div class="container">
+      <p class="section-eyebrow" data-i18n="split.eyebrow">Хто є хто</p>
+      <h2 class="section-title" data-i18n="split.title">Інструмент і людина — не одне й те саме</h2>
+      <p class="section-sub" data-i18n="split.sub">SCI виконує роботу. За результат, спілкування й рішення відповідаю я особисто.</p>
+    </div>
+
+    <div class="split-grid">
+      <!-- SCI panel — system/technical identity -->
+      <div class="panel panel--sci reveal">
+        <div class="panel-noise" aria-hidden="true"></div>
+        <div class="panel-head">
+          <svg class="panel-mark" width="30" height="30" aria-hidden="true"><use href="#mark-sci"/></svg>
+          <span class="panel-name">SCI</span>
+          <span class="panel-chip"><span class="status-dot" aria-hidden="true"></span>online</span>
+        </div>
+        <p class="panel-role" data-i18n="split.sciRole">AI-платформа автоматизації розробки</p>
+        <p class="panel-desc" data-i18n="split.sciDesc">
+          Мультиагентна система: планувальник розбиває задачу на кроки, спеціалізовані
+          агенти пишуть код паралельно, маршрутизатор обирає модель під кожен виклик,
+          QA-агент шукає биті посилання й мертві кнопки до того, як їх побачите ви.
+        </p>
+        <dl class="panel-metrics">
+          <div><dt class="js-counter" data-target="100" data-suffix="k+">0</dt><dd>LOC</dd></div>
+          <div><dt class="js-counter" data-target="1000" data-suffix="+">0</dt><dd>tests</dd></div>
+          <div><dt class="js-counter" data-target="750" data-suffix="+">0</dt><dd>endpoints</dd></div>
+          <div><dt class="js-counter" data-target="19">0</dt><dd>agents</dd></div>
+        </dl>
+        <p class="panel-limit" data-i18n="split.sciLimit">✕ не спілкується з клієнтами. ✕ не приймає рішень щодо вашого проєкту.</p>
+      </div>
+
+      <!-- Seam connector -->
+      <div class="split-seam" aria-hidden="true">
+        <span class="seam-line"></span>
+        <span class="seam-label" data-i18n="split.seam">керує</span>
+        <span class="seam-line"></span>
+      </div>
+
+      <!-- Ivan panel — personal identity -->
+      <div class="panel panel--human reveal">
+        <div class="panel-head">
+          <span class="avatar" aria-hidden="true">І</span>
+          <span class="panel-name panel-name--human" data-i18n="split.name">Іван</span>
+          <span class="panel-chip panel-chip--human" data-i18n="split.humanRole">розробник</span>
+        </div>
+        <p class="panel-role panel-role--human" data-i18n="split.humanTagline">Постановник задачі, контролер якості, ваш контакт</p>
+        <p class="panel-desc" data-i18n="split.humanDesc">
+          Я побудував SCI і використовую її щодня, щоб не витрачати ваш час на рутину.
+          Але кожен проєкт я особисто беру в роботу, перевіряю руками перед здачею
+          і відповідаю на повідомлення сам — жодних ботів у листуванні з вами.
+        </p>
+        <ul class="panel-trust">
+          <li data-i18n="split.trust1">Особисто перевіряю кожен проєкт перед здачею</li>
+          <li data-i18n="split.trust2">Пряме спілкування, без посередників і скриптів</li>
+          <li data-i18n="split.trust3">Відповідаю за результат — не SCI, а я</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES ==================== -->
+  <section class="services" id="services">
+    <div class="container">
+      <p class="section-eyebrow" data-i18n="services.eyebrow">Послуги</p>
+      <h2 class="section-title" data-i18n="services.title">Що я роблю</h2>
+
+      <div class="service-grid">
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">◧</div>
+          <h3 data-i18n="services.s1title">Лендинги та сайти</h3>
+          <p data-i18n="services.s1desc">Адаптивний сайт під ключ: чистий код, робочі форми, швидке завантаження. Без конструкторів і щомісячних платежів.</p>
+          <ul class="service-meta">
+            <li><span data-i18n="services.from">від</span> $80</li>
+            <li><span data-i18n="services.s1time">2 дні</span></li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">◈</div>
+          <h3 data-i18n="services.s2title">Telegram-боти</h3>
+          <p data-i18n="services.s2desc">Прийом замовлень, бронювання, FAQ, адмінка, інтеграція з таблицями та оплатами. Повний вихідний код — ваш.</p>
+          <ul class="service-meta">
+            <li><span data-i18n="services.from">від</span> $60</li>
+            <li><span data-i18n="services.s2time">2-3 дні</span></li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">◆</div>
+          <h3 data-i18n="services.s3title">AI-асистенти</h3>
+          <p data-i18n="services.s3desc">Чат-бот, що відповідає клієнтам на основі ваших даних — ціни, послуги, графік. Працює в сайті або Telegram.</p>
+          <ul class="service-meta">
+            <li><span data-i18n="services.from">від</span> $100</li>
+            <li><span data-i18n="services.s3time">2-4 дні</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-copy reveal">
+        <p class="section-eyebrow" data-i18n="about.eyebrow">Про мене</p>
+        <h2 class="section-title" data-i18n="about.title">Чому саме я</h2>
+        <p data-i18n="about.p1">
+          Я — Іван, розробник. Побудував SCI, бо втомився витрачати клієнтський час
+          на рутину, яку можна автоматизувати чесно, без втрати якості.
+        </p>
+        <p data-i18n="about.p2">
+          Платформа бере на себе будівництво, я — точну постановку задачі й фінальну
+          перевірку кожної деталі. Тому лендинг йде 24-48 годин, а не два тижні.
+        </p>
+      </div>
+      <ul class="about-facts reveal">
+        <li><strong>24-48<span class="unit">год</span></strong><span data-i18n="about.f4">типова здача лендингу</span></li>
+        <li><strong>&lt;2<span class="unit">год</span></strong><span data-i18n="about.f5">типовий час відповіді на повідомлення</span></li>
+        <li><strong>100%</strong><span data-i18n="about.f6">проєктів перевіряю особисто перед здачею</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="contact" id="contact">
+    <div class="container contact-inner">
+      <p class="section-eyebrow" data-i18n="contact.eyebrow">Контакт</p>
+      <h2 class="section-title" data-i18n="contact.title">Обговоримо проєкт?</h2>
+      <p class="section-sub" data-i18n="contact.sub">
+        Опишіть задачу в кілька речень — відповідаю сам, протягом кількох годин.
+      </p>
+
+      <div class="contact-links">
+        <a class="contact-link btn--magnetic" href="mailto:neurallabs753@gmail.com">
+          <span class="contact-link-label" data-i18n="contact.email">Email</span>
+          <span class="contact-link-value">neurallabs753@gmail.com</span>
+        </a>
+        <a class="contact-link btn--magnetic" href="https://t.me/NeuralMrIvan" target="_blank" rel="noopener">
+          <span class="contact-link-label">Telegram</span>
+          <span class="contact-link-value">@NeuralMrIvan</span>
+        </a>
+        <a class="contact-link btn--magnetic" href="https://www.fiverr.com/ivan_sci" target="_blank" rel="noopener">
+          <span class="contact-link-label">Fiverr</span>
+          <span class="contact-link-value" data-i18n="contact.fiverrView">Мій профіль →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span data-i18n="footer.text">© <span id="year"></span> Веб-розробка, боти, AI-інтеграції — на платформі SCI.</span>
+    <a href="#top" class="back-to-top" id="backToTop" aria-label="Нагору">↑</a>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/intro.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

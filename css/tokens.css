@@ -1,0 +1,54 @@
+/* Design tokens — single source of truth for the whole site.
+   Warm amber accent on near-black, deliberately not the purple-on-dark
+   AI-generic look. Serif display (Fraunces) + geometric sans (Manrope) +
+   mono (JetBrains Mono) for the code/terminal motif. */
+:root {
+  /* Color */
+  --color-bg: #0b0d10;
+  --color-bg-alt: #101317;
+  --color-surface: #15181d;
+  --color-surface-hover: #1b1f26;
+  --color-border: #262b33;
+  --color-border-strong: #343a45;
+
+  --color-text: #eceef1;
+  --color-text-dim: #b7bcc5;
+  --color-muted: #7b8290;
+
+  --color-primary: #ff7a45;
+  --color-primary-dim: #e8632e;
+  --color-primary-tint: rgba(255, 122, 69, 0.12);
+
+  --color-accent: #4fd1c5;
+  --color-accent-tint: rgba(79, 209, 197, 0.12);
+
+  /* Type */
+  --font-heading: "Fraunces", Georgia, serif;
+  --font-body: "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  --fs-hero: clamp(2.4rem, 5vw + 1rem, 4.4rem);
+  --fs-h2: clamp(1.9rem, 2.6vw + 1rem, 2.8rem);
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  /* Space / shape */
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow-1: 0 20px 60px -24px rgba(0, 0, 0, 0.65);
+  --shadow-2: 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+  --container-w: 1180px;
+  --section-pad: clamp(64px, 9vw, 128px);
+
+  /* Motion */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 180ms;
+  --dur-med: 320ms;
+}
+
+@media (prefers-color-scheme: light) {
+  /* Site is intentionally single-theme (dark, matches the "engineer at
+     night" brand) — light-scheme override intentionally omitted so the
+     brand stays consistent regardless of OS theme. */
+}
