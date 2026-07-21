@@ -61,7 +61,7 @@ const I18N = {
     "contact.title": "Обговоримо проєкт?",
     "contact.sub": "Опишіть задачу в кілька речень — відповідаю сам, протягом кількох годин.",
     "contact.email": "Email",
-    "contact.fiverrView": "Мій профіль →",
+    "contact.fiverrView": "Замовити гіг →",
 
     "footer.text": "© <span id=\"year\"></span> Веб-розробка, боти, AI-інтеграції — на платформі SCI.",
   },
@@ -124,7 +124,7 @@ const I18N = {
     "contact.title": "Let's talk about your project",
     "contact.sub": "Describe the task in a couple of sentences — I reply myself, within a few hours.",
     "contact.email": "Email",
-    "contact.fiverrView": "My profile →",
+    "contact.fiverrView": "Order the gig →",
 
     "footer.text": "© <span id=\"year\"></span> Web development, bots, AI integrations — built on SCI.",
   },
