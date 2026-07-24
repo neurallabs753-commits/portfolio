@@ -1,20 +1,18 @@
 @media (max-width: 980px) {
   .about-grid { grid-template-columns: 1fr; }
   .hero-grid { min-height: 0; }
-  /* Copy stays first on narrow screens; the photo drops out of the
-     absolute full-bleed layout into a normal boxed card underneath it —
-     the terminal still overlaps its lower-right corner. */
+  /* Copy stays first on narrow screens; the dark panel drops out of the
+     absolute full-bleed layout into a normal boxed card underneath it. */
   .hero-visual {
     position: relative;
     width: calc(100% - 40px);
     max-width: 440px;
-    aspect-ratio: 4 / 5;
     margin: 32px auto 0;
+    padding: 40px 0;
     border-radius: var(--radius);
     box-shadow: var(--shadow-1);
   }
-  .hero-photo-mark { font-size: clamp(1.6rem, 5vw, 2.2rem); }
-  .hero-visual .terminal { right: 0; bottom: -20px; width: min(300px, 92%); }
+  .hero-visual .terminal { width: 100%; }
   .service-grid { grid-template-columns: repeat(2, 1fr); }
 
   .split-grid { grid-template-columns: 1fr; }
