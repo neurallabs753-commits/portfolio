@@ -21,9 +21,8 @@
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 64px;
   align-items: center;
+  min-height: clamp(480px, 46vw, 660px);
 }
 
 .eyebrow {
@@ -42,6 +41,8 @@
   margin-bottom: 24px;
 }
 .hero-title-accent { color: var(--color-primary); }
+
+.hero-copy { max-width: 640px; position: relative; z-index: 2; }
 
 .hero-sub {
   font-size: 1.1rem;
@@ -66,7 +67,46 @@
   margin-top: 4px;
 }
 
-.hero-visual { display: flex; justify-content: center; }
+/* Photo bleeds full-height inside .hero (which spans the whole viewport
+   width, unlike .container) and pins to the true right edge — a fixed-size
+   boxed card here is what made it read as "squished" before; a full-bleed
+   column matching the hero's own height is what the reference is doing. */
+.hero-visual {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(46vw, 640px);
+  overflow: hidden;
+}
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 76% 20%;
+}
+/* Neon bracket mark over the empty dark part of the photo (upper-right,
+   above the shoulder line) — echoes the header brand mark. */
+.hero-photo-mark {
+  position: absolute;
+  top: 13%;
+  right: 9%;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  color: var(--color-primary);
+  text-shadow: 0 0 26px rgba(255, 122, 69, 0.65), 0 0 64px rgba(255, 122, 69, 0.35);
+  letter-spacing: -0.02em;
+}
+/* Terminal floats over the lower-right of the photo — shoulders/laptop
+   area, well below the face — not centered over the whole image. */
+.hero-visual .terminal {
+  position: absolute;
+  right: 24px;
+  bottom: 48px;
+  width: min(380px, 82%);
+  z-index: 2;
+}
 
 /* ── Services / Process shared grid rhythm ──────────────────────────── */
 .services {
