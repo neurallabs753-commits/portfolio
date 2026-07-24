@@ -4,6 +4,10 @@
   padding-bottom: clamp(64px, 8vw, 100px);
   position: relative;
   overflow: hidden;
+  background:
+    linear-gradient(90deg, var(--color-bg) 0%, rgba(11, 13, 16, 0.82) 32%, rgba(11, 13, 16, 0.45) 58%, rgba(11, 13, 16, 0.2) 100%),
+    url('../img/hero-bg.webp') center top / cover no-repeat;
+  background-color: var(--color-bg);
 }
 .hero::before {
   content: "";

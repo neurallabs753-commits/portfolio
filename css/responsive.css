@@ -3,6 +3,14 @@
   /* Copy stays first on narrow screens — the headline is the pitch, the
      terminal card is a supporting visual, not the lead. */
   .hero-visual { max-width: 480px; margin-inline: auto; }
+  /* Stacked layout puts the copy block over the busiest part of the photo
+     (the person), so the overlay needs to be darker/more uniform here than
+     on the side-by-side desktop layout to keep the headline readable. */
+  .hero {
+    background:
+      linear-gradient(180deg, var(--color-bg) 0%, rgba(11, 13, 16, 0.88) 45%, rgba(11, 13, 16, 0.55) 100%),
+      url('../img/hero-bg.webp') center top / cover no-repeat;
+  }
   .service-grid { grid-template-columns: repeat(2, 1fr); }
 
   .split-grid { grid-template-columns: 1fr; }
