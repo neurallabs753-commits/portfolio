@@ -76,14 +76,14 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: min(46vw, 640px);
+  width: 48vw;
   overflow: hidden;
 }
 .hero-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 76% 20%;
+  object-position: 78% 20%;
 }
 /* Neon bracket mark over the empty dark part of the photo (upper-right,
    above the shoulder line) — echoes the header brand mark. */
