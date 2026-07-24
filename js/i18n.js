@@ -48,6 +48,9 @@ const I18N = {
     "services.s3title": "AI-асистенти",
     "services.s3desc": "Чат-бот, що відповідає клієнтам на основі ваших даних — ціни, послуги, графік. Працює в сайті або Telegram.",
     "services.s3time": "2-4 дні",
+    "services.s4title": "Виправлення багів",
+    "services.s4desc": "Знайду й виправлю конкретну помилку у вашому сайті чи коді — з поясненням причини. Швидко, без переробки всього проєкту.",
+    "services.s4time": "24 години",
 
     "about.eyebrow": "Про мене",
     "about.title": "Чому саме я",
@@ -62,6 +65,7 @@ const I18N = {
     "contact.sub": "Опишіть задачу в кілька речень — відповідаю сам, протягом кількох годин.",
     "contact.email": "Email",
     "contact.fiverrView": "Замовити гіг →",
+    "contact.githubView": "Код і проєкти →",
 
     "footer.text": "© <span id=\"year\"></span> Веб-розробка, боти, AI-інтеграції — на платформі SCI.",
   },
@@ -111,6 +115,9 @@ const I18N = {
     "services.s3title": "AI assistants",
     "services.s3desc": "A chatbot that answers customers from your own data — prices, services, hours. Works on your site or in Telegram.",
     "services.s3time": "2-4 days",
+    "services.s4title": "Bug fixes",
+    "services.s4desc": "I'll find and fix a specific bug in your website or code, with an explanation of the cause. Fast, no full rebuild.",
+    "services.s4time": "24 hours",
 
     "about.eyebrow": "About",
     "about.title": "Why work with me",
@@ -125,6 +132,7 @@ const I18N = {
     "contact.sub": "Describe the task in a couple of sentences — I reply myself, within a few hours.",
     "contact.email": "Email",
     "contact.fiverrView": "Order the gig →",
+    "contact.githubView": "Code & projects →",
 
     "footer.text": "© <span id=\"year\"></span> Web development, bots, AI integrations — built on SCI.",
   },
