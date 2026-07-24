@@ -70,7 +70,7 @@
   margin-top: 4px;
 }
 
-.hero-visual { display: flex; justify-content: center; }
+.hero-visual { display: flex; justify-content: center; align-self: flex-end; margin-left: 24px; padding-bottom: 12px; }
 
 /* ── Services / Process shared grid rhythm ──────────────────────────── */
 .services {
