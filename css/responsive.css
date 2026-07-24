@@ -2,7 +2,7 @@
   .hero-grid, .about-grid { grid-template-columns: 1fr; }
   /* Copy stays first on narrow screens — the headline is the pitch, the
      terminal card is a supporting visual, not the lead. */
-  .hero-visual { max-width: 320px; margin-inline: auto; margin-top: 24px; }
+  .hero-visual { max-width: 480px; margin-inline: auto; }
   .service-grid { grid-template-columns: repeat(2, 1fr); }
 
   .split-grid { grid-template-columns: 1fr; }

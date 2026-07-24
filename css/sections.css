@@ -66,31 +66,7 @@
   margin-top: 4px;
 }
 
-/* Photo lives in its own fixed-aspect box instead of a full-bleed section
-   background — a full-bleed cover image rescales with the *whole* hero's
-   width, so the face's position relative to the terminal card drifted at
-   every viewport (fine at one window size, overlapping the face at the
-   next). A fixed-ratio box keeps the photo-to-terminal relationship
-   identical everywhere; only the box's own size shrinks on small screens. */
-.hero-visual {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  aspect-ratio: 400 / 680;
-  margin-left: auto;
-  border-radius: var(--radius);
-  background: url('../img/hero-bg.webp') 74% top / cover no-repeat;
-  box-shadow: var(--shadow-1);
-}
-/* Terminal floats over the lower-right of the photo — shoulders/laptop area,
-   well below the face — and pokes slightly past the photo's own edges so it
-   reads as a floating card, not a cropped-in element. */
-.hero-visual .terminal {
-  position: absolute;
-  right: -28px;
-  bottom: -16px;
-  width: min(360px, 88vw);
-}
+.hero-visual { display: flex; justify-content: center; }
 
 /* ── Services / Process shared grid rhythm ──────────────────────────── */
 .services {
