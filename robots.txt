@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://neurallabs753-commits.github.io/portfolio/sitemap.xml
